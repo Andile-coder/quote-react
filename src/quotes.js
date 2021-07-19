@@ -4,14 +4,14 @@ import { useState, useEffect } from "react";
 function Quote() {
   const [quote, setQuote] = useState([]);
   useEffect(() => {
-    fetch("https://andile-quoteserver.glitch.me/quotes")
+    fetch("https://node-challenge-qoute-server.herokuapp.com/quote")
       .then((response) => response.json)
-      .then((res) => setQuote(res));
+      .then((data) => setQuote(data));
   }, []);
 
   return (
     <div>
-      <p>{quote.quote} hello world</p>
+      <p>helloworld {quote[1].quote} </p>
     </div>
   );
 }
